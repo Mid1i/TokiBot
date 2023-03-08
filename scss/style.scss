@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@import "reset.scss";
+
+@mixin underline($top, $left, $width) {
+    top: $top;
+    left: $left; 
+    width: $width;
+    height: 2px;
+    content: "";  
+    position: absolute;
+    background: red;    
+};
+
+@mixin slick-arrow($image) {
+    border-radius: 100%; 
+    box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.622);
+    background: rgba(202, 200, 200, 0.622) url($image) 0 0 / 100% no-repeat;     
+};
+
+@mixin color-name($name) {
+    top: 25%;
+    left: 120%; 
+    content: $name;
+    font-size: 15px; 
+    position: absolute;    
+};
+
+@mixin adaptive-value($name, $startSize, $minSize) {
+    #{$name}: calc(#{$minSize + px} + #{$startSize - $minSize} * (100vw - 200px) / (1920 - 200));
+};
+
+.main-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+
+    font-family: "Poppins";
+}
+
+// Header
+.header {
+    display: flex;
+    max-width: 100rem;
+    position: relative;
+    padding-block: 10px;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+    justify-content: space-around;
+
+    &__title {
+        font-weight: 600;
+        padding-inline: 10px;
+        border-bottom: 2px solid red;
+        @include adaptive-value("font-size", 50, 25);
+        @include adaptive-value("padding-inline", 10, 5);
+    }
+
+    &__settings {
+        display: flex;
+        cursor: pointer;
+        position: relative;
+        @include adaptive-value("gap", 20, 12);
+
+        &_item {
+            z-index: 2;
+            padding: 5px;
+            border-radius: 100%;
+            background: rgb(222,221,221);
+            box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.622);
+        }
+    }
+}
+
+// Theme settings
+.theme-block {
+    gap: 5px;
+    z-index: 2;
+    left: -18%;
+    top: -250px;
+    width: 120px;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    border-radius: 10px;
+    background: white;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.622);
+
+    &__title {font-size: 15px;}
+
+    &-color {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        border-radius: 100%;
+        
+        &__red {
+            background: red;
+            &::after {@include color-name("red");}
+        }
+
+        &__blue {
+            background: rgb(81, 81, 235);
+            &::after {@include color-name("blue");}
+        }
+
+        &__green {
+            background: green;
+            &::after {@include color-name("green");}
+        }
+
+        &__orange {
+            background: orange;
+            &::after {@include color-name("orange");}
+        }
+
+        &__purple {
+            background: rgb(141, 3, 141);
+            &::after {@include color-name("purple");}
+        }
+    }
+
+    @media (max-width: 320px) {left: -50%;}
+}
+
+// Animation
+.theme-item {
+    animation: theme 5s infinite;
+}
+
+@keyframes theme {
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes line {
+    0% {transform: translateX(-100vw);}
+    100% {transform: translateX(100vw);}
+}
+
+// Main block
+.container {
+    min-width: 0;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s ease 0s;
+    background: rgba(150, 141, 141, 0.469);
+    
+    &__title {
+        position: relative;
+        font-weight: 600;
+        @include adaptive-value("font-size", 35, 25);
+        @include adaptive-value("margin-block", 40, 20);
+
+        &::before {@include underline(100%, 15%, 70%);}
+        &::after {@include underline(115%, 25%, 50%);}
+    }
+
+    &__button {
+        padding: 10px 30px;
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 20px;
+        background-color: red;
+        transition: all 0.5s ease 0s;
+        @include adaptive-value("margin-block", 50, 25);
+        box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.622);
+    }
+}
+
+//Main block slider
+.slider {
+    width: 90%;
+    min-width: 0;
+    max-width: 500px;
+    position: relative;
+
+    &-item {
+        gap: 10px;
+        display: flex;
+        align-items: center;  
+        flex-direction: column;
+        
+        &__title {@include adaptive-value("font-size", 20, 15);}
+
+        &__image {
+            & img {max-width: 100%;}
+            @include adaptive-value("width", 80, 50);
+            @include adaptive-value("height", 80, 50);    
+        }
+
+        &__counter, &__plus-button, &__minus-button {display: none;}
+
+        &__add-button {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 2px 20px;
+            background: red;
+            margin-bottom: 15px;
+            border-radius: 20px; 
+            box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.622);   
+        }
+    }
+}
+
+// Slick slider
+.slick {
+    &-list {overflow: hidden;}
+
+    &-track {display: flex;}
+
+    &-arrow {     
+        top: 50%;
+        z-index: 1;   
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        margin-top: -30px;
+        position: absolute;
+        
+        &.slick-prev {left: 0; @include slick-arrow('../img/icons/02.svg');}
+        &.slick-next {right: 0; @include slick-arrow('../img/icons/03.svg');}
+    } 
+}
+
+// Footer
+.footer {
+    gap: 10px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s ease 0s;
+    @include adaptive-value("padding-block", 10, 5);
+    @include adaptive-value("padding-inline", 25, 10);
+
+    &-dev {
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        background: white;
+        transition: all 0.5s ease 0s;
+        @include adaptive-value("padding-inline", 20, 10);
+
+        &__title {@include adaptive-value("font-size", 18, 15);}
+
+        &__links {
+            display: flex;
+            @include adaptive-value("gap", 25, 15);
+            @include adaptive-value("padding-left", 25, 15);
+
+            &_item {
+                @include adaptive-value("width", 40, 30);
+                @include adaptive-value("height", 40, 30);
+                
+                & img {
+                    max-width: 100%;
+                    border-radius: 100%;
+                    background: rgba(112, 111, 111, 0.622);
+                    box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.622);
+                }
+            }
+        }
+    }
+
+    &__title {font-size: 15px;}
+
+    &__line {
+        left: 0;
+        top: 50%;
+        height: 3px;
+        width: 100vw;
+        position: absolute;
+        background: red;
+        animation: line 10s infinite linear;
+
+        @media (max-width: 300px) {display: none;}
+    }
+}
+
+// Red theme
+.red-theme {
+    &.header__title {border-bottom: 2px solid red;}
+    &.container__button, &.slider-item__add-button, &.footer__line, 
+    &.container__title::before, &.container__title::after {background: red;}
+}
+
+// Blue theme
+.blue-theme {
+    &.header__title {border-bottom: 2px solid rgb(81, 81, 235);}
+    &.container__button, &.slider-item__add-button, &.footer__line, 
+    &.container__title::before, &.container__title::after {background: rgb(81, 81, 235);}
+}
+
+// Green theme
+.green-theme {
+    &.header__title {border-bottom: 2px solid green;}
+    &.container__button, &.slider-item__add-button, &.footer__line, 
+    &.container__title::before, &.container__title::after {background: green;}
+}
+
+// Orange theme
+.orange-theme {
+    &.header__title {border-bottom: 2px solid orange;}
+    &.container__button, &.slider-item__add-button, &.footer__line, 
+    &.container__title::before, &.container__title::after {background: orange;}
+}
+
+// Purple theme
+.purple-theme {
+    &.header__title {border-bottom: 2px solid rgb(141, 3, 141);}
+    &.container__button, &.slider-item__add-button, &.footer__line, 
+    &.container__title::before, &.container__title::after {background: rgb(141, 3, 141);}
+}
+
+// Night-mode
+.night-mode {  
+    &.footer {border-top: 3px solid white;}
+    &.theme-block {border: 1px solid white;}
+    &.header {border-bottom: 3px solid white;}
+    &.container {background-color: black; color: white; & button {color: white;}}
+    &.header, &.footer, &.footer-dev, &.theme-block {background-color:rgb(41,41,41); color: white;} 
+}

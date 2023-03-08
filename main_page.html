@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Page title -->
+        <title>TokiBot</title>
+        <!-- Adaptive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0">
+        <!-- Connecting CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Connecting the site icon -->
+        <link rel="icon" type="image/png" href="./img/icons/01.svg" sizes="96x96">
+        <!-- Page encoding -->
+        <meta charset="UTF-8">
+        <!-- Connecting JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="main-page">
+            <div class="header">
+                <div class="header__title">TokiBot</div>
+                <div class="header__settings">
+                    <div class="theme-block">
+                        <div class="theme-block__title">Theme Color</div>
+                        <div class="theme-block-color theme-block-color__red" data-id="red"></div>
+                        <div class="theme-block-color theme-block-color__blue" data-id="blue"></div>
+                        <div class="theme-block-color theme-block-color__green" data-id="green"></div>
+                        <div class="theme-block-color theme-block-color__orange" data-id="orange"></div>
+                        <div class="theme-block-color theme-block-color__purple" data-id="purple"></div>
+                    </div>
+                    <div class="header__settings_item theme-item">
+                        <img src="./img/settings/01.svg" alt="" class="theme-item">
+                    </div>
+                    <div class="header__settings_item mode-item">
+                        <img src="./img/theme/01.svg" alt="" class="mode-item">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container__title">Food</div>
+                <div class="slider">
+                    <div class="slider-item">
+                        <div class="slider-item__title">Burger•15$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/01.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter burger-counter">0</div>
+                        <button class="slider-item__add-button burger-button">Add</button>
+                        <button class="slider-item__plus-button burger-plus">+</button>
+                        <button class="slider-item__minus-button burger-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Pizza•20$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/02.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter pizza-counter">0</div>
+                        <button class="slider-item__add-button pizza-button">Add</button>
+                        <button class="slider-item__plus-button pizza-plus">+</button>
+                        <button class="slider-item__minus-button pizza-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Hot-dog•10$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/03.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter hot-dog-counter">0</div>
+                        <button class="slider-item__add-button hot-dog-button">Add</button>
+                        <button class="slider-item__plus-button hot-dog-plus">+</button>
+                        <button class="slider-item__minus-button hot-dog-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">French Fries•8$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/04.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter fries-counter">0</div>
+                        <button class="slider-item__add-button fries-button">Add</button>
+                        <button class="slider-item__plus-button fries-plus">+</button>
+                        <button class="slider-item__minus-button fries-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Ice-Cream•5$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/05.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter ice-cream-counter">0</div>
+                        <button class="slider-item__add-button ice-cream-button">Add</button>
+                        <button class="slider-item__plus-button ice-cream-plus">+</button>
+                        <button class="slider-item__minus-button ice-cream-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Croissant•8$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/06.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter croissant-counter">0</div>
+                        <button class="slider-item__add-button croissant-button">Add</button>
+                        <button class="slider-item__plus-button croissant-plus">+</button>
+                        <button class="slider-item__minus-button croissant-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Donut•6$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/07.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter donut-counter">0</div>
+                        <button class="slider-item__add-button donut-button">Add</button>
+                        <button class="slider-item__plus-button donut-plus">+</button>
+                        <button class="slider-item__minus-button donut-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Popcorn•12$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/08.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter popcorn-counter">0</div>
+                        <button class="slider-item__add-button popcorn-button">Add</button>
+                        <button class="slider-item__plus-button popcorn-plus">+</button>
+                        <button class="slider-item__minus-button popcorn-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Sushi•8$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/food/09.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter sushi-counter">0</div>
+                        <button class="slider-item__add-button sushi-button">Add</button>
+                        <button class="slider-item__plus-button sushi-plus">+</button>
+                        <button class="slider-item__minus-button sushi-minus">-</button>
+                    </div>
+                </div>
+                <div class="container__title">Drinks</div>
+                <div class="slider">
+                    <div class="slider-item">
+                        <div class="slider-item__title">Coke•6$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/drinks/01.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter coke-counter">0</div>
+                        <button class="slider-item__add-button coke-button">Add</button>
+                        <button class="slider-item__plus-button coke-plus">+</button>
+                        <button class="slider-item__minus-button coke-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Juice•2$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/drinks/02.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter juice-counter">0</div>
+                        <button class="slider-item__add-button juice-button">Add</button>
+                        <button class="slider-item__plus-button juice-plus">+</button>
+                        <button class="slider-item__minus-button juice-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Milkshake•10$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/drinks/03.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter milkshake-counter">0</div>
+                        <button class="slider-item__add-button milkshake-button">Add</button>
+                        <button class="slider-item__plus-button miklshake-plus">+</button>
+                        <button class="slider-item__minus-button milkshake-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Tea•8$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/drinks/04.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter tea-counter">0</div>
+                        <button class="slider-item__add-button tea-button">Add</button>
+                        <button class="slider-item__plus-button tea-plus">+</button>
+                        <button class="slider-item__minus-button tea-minus">-</button>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__title">Coffee•5$</div>
+                        <div class="slider-item__image">
+                            <img src="./img/drinks/05.svg" alt="">
+                        </div>
+                        <div class="slider-item__counter coffee-counter">0</div>
+                        <button class="slider-item__add-button coffee-button">Add</button>
+                        <button class="slider-item__plus-button coffee-plus">+</button>
+                        <button class="slider-item__minus-button coffee-minus">-</button>
+                    </div>
+                </div>
+                <button class="container__button">View Order</button>
+            </div>
+            <div class="footer">
+                <div class="footer-dev">
+                    <div class="footer-dev__title">Front-End dev. Mid1i</div>
+                    <div class="footer-dev__links">
+                        <div class="footer-dev__links_item">
+                            <a href="https://t.me/Mid1i">
+                                <img src="./img/links/01.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="footer-dev__links_item">
+                            <a href="">
+                                <img src="./img/links/02.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-dev">
+                    <div class="footer-dev__title">Back-End dev. h0riz4n</div>
+                    <div class="footer-dev__line"></div>
+                    <div class="footer-dev__links">
+                        <div class="footer-dev__links_item">
+                            <a href="https://t.me/h0riz4n">
+                                <img src="./img/links/01.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="footer-dev__links_item">
+                            <a href="">
+                                <img src="./img/links/02.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__title">© TokiBot 2023</div>
+                <div class="footer__line"></div>
+            </div>
+        </div>
+        <!-- Connecting SlickSlider -->
+        <script type="text/javascript" src="/js/slick.min.js"></script>
+        <!-- Connecting JavaScript -->
+        <script src="js/script.js"></script>  
+    </body>
+</html>
