@@ -1,5 +1,5 @@
 // Server path
-let path = "http://127.0.0.1:5500/";
+let path = "https://mid1i.github.io/TokiBot/";
 
 // Telegram Settings
 let tg = window.Telegram.WebApp;
