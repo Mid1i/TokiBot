@@ -76,11 +76,13 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   display: flex;
   overflow-x: hidden;
+  background: white;
   flex-direction: column;
   font-family: "Poppins";
 }
 
 .header {
+  width: 100%;
   display: flex;
   position: relative;
   padding-block: 10px;

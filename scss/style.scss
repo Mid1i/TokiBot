@@ -35,13 +35,14 @@
     height: 100vh;
     display: flex;
     overflow-x: hidden;
+    background: white;
     flex-direction: column;
-
     font-family: "Poppins";
 }
 
 // Header
 .header {
+    width: 100%;
     display: flex;
     position: relative;
     padding-block: 10px;

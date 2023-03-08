@@ -1,5 +1,9 @@
 // Server path
-let path = "https://mid1i.github.io/TokiBot/";
+let path = "http://127.0.0.1:5500/";
+
+// Telegram Settings
+let tg = window.Telegram.WebApp;
+tg.expand();
 
 document.addEventListener('click', async function(event) {
     let arg = event.target;
