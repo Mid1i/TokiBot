@@ -1,16 +1,6 @@
 // Server path
 let path = "https://mid1i.github.io/TokiBot/";
 
-$(document).ready(function() {
-    $('.slider').slick({
-        speed: 700,
-        slidesToShow: 1,
-        easing: 'linear',
-        swipe: false,
-        infinite: true
-    });
-});
-
 document.addEventListener('click', async function(event) {
     let arg = event.target;
     let id = arg.dataset.id; 
