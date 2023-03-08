@@ -1,5 +1,5 @@
 // Server path
-let path = "https://mid1i.github.io/TokiBot/";
+let path = "http://127.0.0.1:5500/";
 
 document.addEventListener('click', async function(event) {
     let arg = event.target;
@@ -15,12 +15,11 @@ document.addEventListener('click', async function(event) {
     }
 
     if (arg.classList.contains('theme-item')) {
-        //await first_animate(arg);
-        await second_animate(arg);    
+        await animate(arg);    
     }
 
     if (arg.classList.contains(`theme-block-color__${id}`)) {
-        let titles = $('.header__title, .container__button, .container__title, .slider-item__add-button, .footer__line');
+        let titles = $('.header__title, .container__button, .container__title, .slider-item__add-button, .footer__line, .slider-item__counter, .slider-item__plus-button, .slider-item__minus-button');
 
         titles.removeClass(`red-theme`);
         titles.removeClass(`blue-theme`);
@@ -32,24 +31,8 @@ document.addEventListener('click', async function(event) {
     }
 });
 
-// First Animate
-async function first_animate(arg) {
-    if (arg.classList.contains('active')) {
-        // Smooth disappearing of the theme-block upwards
-        $('.theme-block').animate ({
-            'top': '-250px'
-        }, 500)
-    } else {
-        // Smooth appearing of the theme-block
-        $('.theme-block').animate ({
-            'top': '30px'
-        }, 500)
-    }
-    $('.theme-item').toggleClass('active');    
-};
-
 // Second Animate
-async function second_animate(arg) {
+async function animate(arg) {
 
     if (arg.classList.contains('active')) {
         // Smooth disappearing of the theme-block upwards
